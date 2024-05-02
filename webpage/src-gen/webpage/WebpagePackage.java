@@ -68,13 +68,22 @@ public interface WebpagePackage extends EPackage {
 	int WEB = 0;
 
 	/**
-	 * The feature id for the '<em><b>Webpage</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Webpages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB__WEBPAGE = 0;
+	int WEB__WEBPAGES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Keywords</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB__KEYWORDS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Web</em>' class.
@@ -83,7 +92,7 @@ public interface WebpagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_FEATURE_COUNT = 1;
+	int WEB_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Web</em>' class.
@@ -114,13 +123,13 @@ public interface WebpagePackage extends EPackage {
 	int WEBPAGE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Category</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Categories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBPAGE__CATEGORY = 1;
+	int WEBPAGE__CATEGORIES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Webpage</em>' class.
@@ -188,13 +197,13 @@ public interface WebpagePackage extends EPackage {
 	int CATEGORY = 3;
 
 	/**
-	 * The feature id for the '<em><b>Article</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Articles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__ARTICLE = 0;
+	int CATEGORY__ARTICLES = 0;
 
 	/**
 	 * The number of structural features of the '<em>Category</em>' class.
@@ -235,15 +244,26 @@ public interface WebpagePackage extends EPackage {
 	EClass getWeb();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webpage.Web#getWebpage <em>Webpage</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webpage.Web#getWebpages <em>Webpages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Webpage</em>'.
-	 * @see webpage.Web#getWebpage()
+	 * @return the meta object for the containment reference list '<em>Webpages</em>'.
+	 * @see webpage.Web#getWebpages()
 	 * @see #getWeb()
 	 * @generated
 	 */
-	EReference getWeb_Webpage();
+	EReference getWeb_Webpages();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webpage.Web#getKeywords <em>Keywords</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Keywords</em>'.
+	 * @see webpage.Web#getKeywords()
+	 * @see #getWeb()
+	 * @generated
+	 */
+	EAttribute getWeb_Keywords();
 
 	/**
 	 * Returns the meta object for class '{@link webpage.Webpage <em>Webpage</em>}'.
@@ -267,15 +287,15 @@ public interface WebpagePackage extends EPackage {
 	EAttribute getWebpage_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webpage.Webpage#getCategory <em>Category</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webpage.Webpage#getCategories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Category</em>'.
-	 * @see webpage.Webpage#getCategory()
+	 * @return the meta object for the containment reference list '<em>Categories</em>'.
+	 * @see webpage.Webpage#getCategories()
 	 * @see #getWebpage()
 	 * @generated
 	 */
-	EReference getWebpage_Category();
+	EReference getWebpage_Categories();
 
 	/**
 	 * Returns the meta object for class '{@link webpage.Article <em>Article</em>}'.
@@ -309,15 +329,15 @@ public interface WebpagePackage extends EPackage {
 	EClass getCategory();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webpage.Category#getArticle <em>Article</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webpage.Category#getArticles <em>Articles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Article</em>'.
-	 * @see webpage.Category#getArticle()
+	 * @return the meta object for the containment reference list '<em>Articles</em>'.
+	 * @see webpage.Category#getArticles()
 	 * @see #getCategory()
 	 * @generated
 	 */
-	EReference getCategory_Article();
+	EReference getCategory_Articles();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
@@ -364,12 +384,20 @@ public interface WebpagePackage extends EPackage {
 		EClass WEB = eINSTANCE.getWeb();
 
 		/**
-		 * The meta object literal for the '<em><b>Webpage</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Webpages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WEB__WEBPAGE = eINSTANCE.getWeb_Webpage();
+		EReference WEB__WEBPAGES = eINSTANCE.getWeb_Webpages();
+
+		/**
+		 * The meta object literal for the '<em><b>Keywords</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB__KEYWORDS = eINSTANCE.getWeb_Keywords();
 
 		/**
 		 * The meta object literal for the '{@link webpage.impl.WebpageImpl <em>Webpage</em>}' class.
@@ -390,12 +418,12 @@ public interface WebpagePackage extends EPackage {
 		EAttribute WEBPAGE__NAME = eINSTANCE.getWebpage_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Category</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Categories</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WEBPAGE__CATEGORY = eINSTANCE.getWebpage_Category();
+		EReference WEBPAGE__CATEGORIES = eINSTANCE.getWebpage_Categories();
 
 		/**
 		 * The meta object literal for the '{@link webpage.impl.ArticleImpl <em>Article</em>}' class.
@@ -426,12 +454,12 @@ public interface WebpagePackage extends EPackage {
 		EClass CATEGORY = eINSTANCE.getCategory();
 
 		/**
-		 * The meta object literal for the '<em><b>Article</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Articles</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CATEGORY__ARTICLE = eINSTANCE.getCategory_Article();
+		EReference CATEGORY__ARTICLES = eINSTANCE.getCategory_Articles();
 
 		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.

@@ -4,6 +4,7 @@ package webpage.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -28,21 +30,40 @@ import webpage.WebpagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link webpage.impl.WebImpl#getWebpage <em>Webpage</em>}</li>
+ *   <li>{@link webpage.impl.WebImpl#getWebpages <em>Webpages</em>}</li>
+ *   <li>{@link webpage.impl.WebImpl#getKeywords <em>Keywords</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	/**
-	 * The cached value of the '{@link #getWebpage() <em>Webpage</em>}' containment reference list.
+	 * The cached value of the '{@link #getWebpages() <em>Webpages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWebpage()
+	 * @see #getWebpages()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Webpage> webpage;
+	protected EList<Webpage> webpages;
+	/**
+	 * The default value of the '{@link #getKeywords() <em>Keywords</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeywords()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String KEYWORDS_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getKeywords() <em>Keywords</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeywords()
+	 * @generated
+	 * @ordered
+	 */
+	protected String keywords = KEYWORDS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,11 +90,34 @@ public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	 * @generated
 	 */
 	@Override
-	public EList<Webpage> getWebpage() {
-		if (webpage == null) {
-			webpage = new EObjectContainmentEList<Webpage>(Webpage.class, this, WebpagePackage.WEB__WEBPAGE);
+	public EList<Webpage> getWebpages() {
+		if (webpages == null) {
+			webpages = new EObjectContainmentEList<Webpage>(Webpage.class, this, WebpagePackage.WEB__WEBPAGES);
 		}
-		return webpage;
+		return webpages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getKeywords() {
+		return keywords;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setKeywords(String newKeywords) {
+		String oldKeywords = keywords;
+		keywords = newKeywords;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebpagePackage.WEB__KEYWORDS, oldKeywords, keywords));
 	}
 
 	/**
@@ -84,8 +128,8 @@ public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case WebpagePackage.WEB__WEBPAGE:
-			return ((InternalEList<?>) getWebpage()).basicRemove(otherEnd, msgs);
+		case WebpagePackage.WEB__WEBPAGES:
+			return ((InternalEList<?>) getWebpages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +142,10 @@ public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case WebpagePackage.WEB__WEBPAGE:
-			return getWebpage();
+		case WebpagePackage.WEB__WEBPAGES:
+			return getWebpages();
+		case WebpagePackage.WEB__KEYWORDS:
+			return getKeywords();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +159,12 @@ public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case WebpagePackage.WEB__WEBPAGE:
-			getWebpage().clear();
-			getWebpage().addAll((Collection<? extends Webpage>) newValue);
+		case WebpagePackage.WEB__WEBPAGES:
+			getWebpages().clear();
+			getWebpages().addAll((Collection<? extends Webpage>) newValue);
+			return;
+		case WebpagePackage.WEB__KEYWORDS:
+			setKeywords((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +178,11 @@ public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case WebpagePackage.WEB__WEBPAGE:
-			getWebpage().clear();
+		case WebpagePackage.WEB__WEBPAGES:
+			getWebpages().clear();
+			return;
+		case WebpagePackage.WEB__KEYWORDS:
+			setKeywords(KEYWORDS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -144,10 +196,29 @@ public class WebImpl extends MinimalEObjectImpl.Container implements Web {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case WebpagePackage.WEB__WEBPAGE:
-			return webpage != null && !webpage.isEmpty();
+		case WebpagePackage.WEB__WEBPAGES:
+			return webpages != null && !webpages.isEmpty();
+		case WebpagePackage.WEB__KEYWORDS:
+			return KEYWORDS_EDEFAULT == null ? keywords != null : !KEYWORDS_EDEFAULT.equals(keywords);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (keywords: ");
+		result.append(keywords);
+		result.append(')');
+		return result.toString();
 	}
 
 } //WebImpl

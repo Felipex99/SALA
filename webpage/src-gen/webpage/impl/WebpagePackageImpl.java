@@ -141,8 +141,18 @@ public class WebpagePackageImpl extends EPackageImpl implements WebpagePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWeb_Webpage() {
+	public EReference getWeb_Webpages() {
 		return (EReference) webEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWeb_Keywords() {
+		return (EAttribute) webEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -171,7 +181,7 @@ public class WebpagePackageImpl extends EPackageImpl implements WebpagePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWebpage_Category() {
+	public EReference getWebpage_Categories() {
 		return (EReference) webpageEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -211,7 +221,7 @@ public class WebpagePackageImpl extends EPackageImpl implements WebpagePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCategory_Article() {
+	public EReference getCategory_Articles() {
 		return (EReference) categoryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -256,17 +266,18 @@ public class WebpagePackageImpl extends EPackageImpl implements WebpagePackage {
 
 		// Create classes and their features
 		webEClass = createEClass(WEB);
-		createEReference(webEClass, WEB__WEBPAGE);
+		createEReference(webEClass, WEB__WEBPAGES);
+		createEAttribute(webEClass, WEB__KEYWORDS);
 
 		webpageEClass = createEClass(WEBPAGE);
 		createEAttribute(webpageEClass, WEBPAGE__NAME);
-		createEReference(webpageEClass, WEBPAGE__CATEGORY);
+		createEReference(webpageEClass, WEBPAGE__CATEGORIES);
 
 		articleEClass = createEClass(ARTICLE);
 		createEAttribute(articleEClass, ARTICLE__CREATED);
 
 		categoryEClass = createEClass(CATEGORY);
-		createEReference(categoryEClass, CATEGORY__ARTICLE);
+		createEReference(categoryEClass, CATEGORY__ARTICLES);
 
 		// Create data types
 		calendarEDataType = createEDataType(CALENDAR);
@@ -304,14 +315,16 @@ public class WebpagePackageImpl extends EPackageImpl implements WebpagePackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webEClass, Web.class, "Web", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWeb_Webpage(), this.getWebpage(), null, "webpage", null, 0, -1, Web.class, !IS_TRANSIENT,
+		initEReference(getWeb_Webpages(), this.getWebpage(), null, "webpages", null, 0, -1, Web.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getWeb_Keywords(), ecorePackage.getEString(), "keywords", null, 0, 1, Web.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(webpageEClass, Webpage.class, "Webpage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebpage_Name(), ecorePackage.getEString(), "name", null, 0, 1, Webpage.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebpage_Category(), this.getCategory(), null, "category", null, 0, -1, Webpage.class,
+		initEReference(getWebpage_Categories(), this.getCategory(), null, "categories", null, 0, -1, Webpage.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -321,7 +334,7 @@ public class WebpagePackageImpl extends EPackageImpl implements WebpagePackage {
 
 		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCategory_Article(), this.getArticle(), null, "article", null, 0, -1, Category.class,
+		initEReference(getCategory_Articles(), this.getArticle(), null, "articles", null, 0, -1, Category.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

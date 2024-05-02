@@ -28,21 +28,21 @@ import webpage.WebpagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link webpage.impl.CategoryImpl#getArticle <em>Article</em>}</li>
+ *   <li>{@link webpage.impl.CategoryImpl#getArticles <em>Articles</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CategoryImpl extends MinimalEObjectImpl.Container implements Category {
 	/**
-	 * The cached value of the '{@link #getArticle() <em>Article</em>}' containment reference list.
+	 * The cached value of the '{@link #getArticles() <em>Articles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArticle()
+	 * @see #getArticles()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Article> article;
+	protected EList<Article> articles;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	 * @generated
 	 */
 	@Override
-	public EList<Article> getArticle() {
-		if (article == null) {
-			article = new EObjectContainmentEList<Article>(Article.class, this, WebpagePackage.CATEGORY__ARTICLE);
+	public EList<Article> getArticles() {
+		if (articles == null) {
+			articles = new EObjectContainmentEList<Article>(Article.class, this, WebpagePackage.CATEGORY__ARTICLES);
 		}
-		return article;
+		return articles;
 	}
 
 	/**
@@ -84,8 +84,8 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case WebpagePackage.CATEGORY__ARTICLE:
-			return ((InternalEList<?>) getArticle()).basicRemove(otherEnd, msgs);
+		case WebpagePackage.CATEGORY__ARTICLES:
+			return ((InternalEList<?>) getArticles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +98,8 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case WebpagePackage.CATEGORY__ARTICLE:
-			return getArticle();
+		case WebpagePackage.CATEGORY__ARTICLES:
+			return getArticles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +113,9 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case WebpagePackage.CATEGORY__ARTICLE:
-			getArticle().clear();
-			getArticle().addAll((Collection<? extends Article>) newValue);
+		case WebpagePackage.CATEGORY__ARTICLES:
+			getArticles().clear();
+			getArticles().addAll((Collection<? extends Article>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +129,8 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case WebpagePackage.CATEGORY__ARTICLE:
-			getArticle().clear();
+		case WebpagePackage.CATEGORY__ARTICLES:
+			getArticles().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -144,8 +144,8 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case WebpagePackage.CATEGORY__ARTICLE:
-			return article != null && !article.isEmpty();
+		case WebpagePackage.CATEGORY__ARTICLES:
+			return articles != null && !articles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

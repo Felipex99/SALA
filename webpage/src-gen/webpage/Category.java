@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link webpage.Category#getArticle <em>Article</em>}</li>
+ *   <li>{@link webpage.Category#getArticles <em>Articles</em>}</li>
  * </ul>
  *
  * @see webpage.WebpagePackage#getCategory()
@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Category extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Article</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Articles</b></em>' containment reference list.
 	 * The list contents are of type {@link webpage.Article}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Article</em>' containment reference list.
-	 * @see webpage.WebpagePackage#getCategory_Article()
+	 * @return the value of the '<em>Articles</em>' containment reference list.
+	 * @see webpage.WebpagePackage#getCategory_Articles()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Article> getArticle();
+	EList<Article> getArticles();
 
 } // Category

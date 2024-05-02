@@ -31,7 +31,7 @@ import webpage.WebpagePackage;
  * </p>
  * <ul>
  *   <li>{@link webpage.impl.WebpageImpl#getName <em>Name</em>}</li>
- *   <li>{@link webpage.impl.WebpageImpl#getCategory <em>Category</em>}</li>
+ *   <li>{@link webpage.impl.WebpageImpl#getCategories <em>Categories</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCategory() <em>Category</em>}' containment reference list.
+	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCategory()
+	 * @see #getCategories()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Category> category;
+	protected EList<Category> categories;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,11 +115,12 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 	 * @generated
 	 */
 	@Override
-	public EList<Category> getCategory() {
-		if (category == null) {
-			category = new EObjectContainmentEList<Category>(Category.class, this, WebpagePackage.WEBPAGE__CATEGORY);
+	public EList<Category> getCategories() {
+		if (categories == null) {
+			categories = new EObjectContainmentEList<Category>(Category.class, this,
+					WebpagePackage.WEBPAGE__CATEGORIES);
 		}
-		return category;
+		return categories;
 	}
 
 	/**
@@ -130,8 +131,8 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case WebpagePackage.WEBPAGE__CATEGORY:
-			return ((InternalEList<?>) getCategory()).basicRemove(otherEnd, msgs);
+		case WebpagePackage.WEBPAGE__CATEGORIES:
+			return ((InternalEList<?>) getCategories()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,8 +147,8 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 		switch (featureID) {
 		case WebpagePackage.WEBPAGE__NAME:
 			return getName();
-		case WebpagePackage.WEBPAGE__CATEGORY:
-			return getCategory();
+		case WebpagePackage.WEBPAGE__CATEGORIES:
+			return getCategories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,9 +165,9 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 		case WebpagePackage.WEBPAGE__NAME:
 			setName((String) newValue);
 			return;
-		case WebpagePackage.WEBPAGE__CATEGORY:
-			getCategory().clear();
-			getCategory().addAll((Collection<? extends Category>) newValue);
+		case WebpagePackage.WEBPAGE__CATEGORIES:
+			getCategories().clear();
+			getCategories().addAll((Collection<? extends Category>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,8 +184,8 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 		case WebpagePackage.WEBPAGE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case WebpagePackage.WEBPAGE__CATEGORY:
-			getCategory().clear();
+		case WebpagePackage.WEBPAGE__CATEGORIES:
+			getCategories().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -200,8 +201,8 @@ public class WebpageImpl extends MinimalEObjectImpl.Container implements Webpage
 		switch (featureID) {
 		case WebpagePackage.WEBPAGE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case WebpagePackage.WEBPAGE__CATEGORY:
-			return category != null && !category.isEmpty();
+		case WebpagePackage.WEBPAGE__CATEGORIES:
+			return categories != null && !categories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

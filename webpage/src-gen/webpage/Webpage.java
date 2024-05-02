@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link webpage.Webpage#getName <em>Name</em>}</li>
- *   <li>{@link webpage.Webpage#getCategory <em>Category</em>}</li>
+ *   <li>{@link webpage.Webpage#getCategories <em>Categories</em>}</li>
  * </ul>
  *
  * @see webpage.WebpagePackage#getWebpage()
@@ -47,15 +47,15 @@ public interface Webpage extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Category</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Categories</b></em>' containment reference list.
 	 * The list contents are of type {@link webpage.Category}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Category</em>' containment reference list.
-	 * @see webpage.WebpagePackage#getWebpage_Category()
+	 * @return the value of the '<em>Categories</em>' containment reference list.
+	 * @see webpage.WebpagePackage#getWebpage_Categories()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Category> getCategory();
+	EList<Category> getCategories();
 
 } // Webpage
